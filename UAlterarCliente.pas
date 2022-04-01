@@ -28,7 +28,6 @@ type
     Label16: TLabel;
     Label17: TLabel;
     Label18: TLabel;
-    Label19: TLabel;
     btnCancelarCliente: TButton;
     btnGravarCliente: TButton;
     Label15: TLabel;
@@ -37,7 +36,6 @@ type
     dbRazaoSocial: TDBEdit;
     dbCnpj: TDBEdit;
     dbInscriçaoEstadual: TDBEdit;
-    dbDataFundaçao: TDBEdit;
     dbNomeFantasia: TDBEdit;
     dbCPF: TDBEdit;
     dbRG: TDBEdit;
@@ -45,7 +43,6 @@ type
     dbNumero: TDBEdit;
     dbTelefone: TDBEdit;
     dbEmail: TDBEdit;
-    dbNomeContato: TDBEdit;
     dbprofissao: TDBEdit;
     dbEmpresa: TDBEdit;
     dbBairro: TDBEdit;
@@ -54,7 +51,6 @@ type
     dbCep: TDBEdit;
     dbCidade: TDBEdit;
     dbUf: TDBEdit;
-    Label5: TLabel;
     Label3: TLabel;
     procedure btnCancelarClienteClick(Sender: TObject);
     procedure btnGravarClienteClick(Sender: TObject);

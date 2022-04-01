@@ -12,7 +12,9 @@ uses
   UCadastroProduto in 'UCadastroProduto.pas' {fCadastroProduto},
   UAlterarCliente in 'UAlterarCliente.pas' {fAlterarCliente},
   UAlterarProduto in 'UAlterarProduto.pas' {fAlterarProduto},
-  Unit2 in 'Unit2.pas' {Form1};
+  Unit2 in 'Unit2.pas' {Form1},
+  UMostrarCliente in 'UMostrarCliente.pas' {Form3},
+  UMostrarProduto in 'UMostrarProduto.pas' {fMostrarProduto};
 
 {$R *.res}
 begin
@@ -30,5 +32,6 @@ begin
   Application.CreateForm(TfAlterarProduto, fAlterarProduto);
   Application.CreateForm(TfAlterarProduto, fAlterarProduto);
   Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfMostrarProduto, fMostrarProduto);
   Application.Run;
 end.

@@ -1,7 +1,7 @@
-﻿object fAlterarProduto: TfAlterarProduto
+﻿object fMostrarProduto: TfMostrarProduto
   Left = 0
   Top = 5
-  Caption = 'Alterar Produto'
+  Caption = 'Mostrar Produto'
   ClientHeight = 591
   ClientWidth = 615
   Color = clBtnFace
@@ -135,7 +135,7 @@
     DataSource = DataM.DTSEstoque
     TabOrder = 1
   end
-  object dbeCodBarras: TDBEdit
+  object dbeCodigoBarras: TDBEdit
     Left = 184
     Top = 194
     Width = 153
@@ -198,24 +198,6 @@
     DataSource = DataM.DTSEstoque
     TabOrder = 8
   end
-  object btnCancelarAlterarEstoque: TButton
-    Left = 32
-    Top = 534
-    Width = 105
-    Height = 49
-    Caption = 'Cancelar'
-    TabOrder = 9
-    OnClick = btnCancelarAlterarEstoqueClick
-  end
-  object btnAlterarGravarEstoque: TButton
-    Left = 480
-    Top = 534
-    Width = 105
-    Height = 49
-    Caption = 'Gravar'
-    TabOrder = 10
-    OnClick = btnAlterarGravarEstoqueClick
-  end
   object dbePrecoCusto: TDBEdit
     Left = 48
     Top = 442
@@ -223,7 +205,7 @@
     Height = 21
     DataField = 'PRECOCUSTO'
     DataSource = DataM.DTSEstoque
-    TabOrder = 11
+    TabOrder = 9
   end
   object dbeLucro: TDBEdit
     Left = 224
@@ -232,7 +214,7 @@
     Height = 21
     DataField = 'PERCLUCRO'
     DataSource = DataM.DTSEstoque
-    TabOrder = 12
+    TabOrder = 10
   end
   object dbePrecoVenda: TDBEdit
     Left = 403
@@ -241,6 +223,24 @@
     Height = 21
     DataField = 'PRECOVENDA'
     DataSource = DataM.DTSEstoque
+    TabOrder = 11
+  end
+  object btnCancelarAlterarEstoque: TButton
+    Left = 32
+    Top = 534
+    Width = 105
+    Height = 49
+    Caption = 'Cancelar'
+    TabOrder = 12
+    OnClick = btnCancelarAlterarEstoqueClick
+  end
+  object btnAlterarMostrarEstoque: TButton
+    Left = 480
+    Top = 534
+    Width = 105
+    Height = 49
+    Caption = 'Alterar'
     TabOrder = 13
+    OnClick = btnAlterarMostrarEstoqueClick
   end
 end

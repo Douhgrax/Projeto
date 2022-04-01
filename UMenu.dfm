@@ -64,12 +64,15 @@ object fMenu: TfMenu
       end
       object Estoque1: TMenuItem
         Caption = 'Estoque'
+        OnClick = Estoque1Click
       end
       object Venda1: TMenuItem
         Caption = 'Venda'
+        OnClick = Venda1Click
       end
       object Gerenciar1: TMenuItem
         Caption = 'Gerenciar'
+        OnClick = Gerenciar1Click
       end
     end
     object Sair1: TMenuItem

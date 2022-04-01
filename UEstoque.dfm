@@ -851,6 +851,7 @@ object fEstoque: TfEstoque
     Height = 66
     Caption = 'Mostrar'
     TabOrder = 3
+    OnClick = btnMostrarClick
   end
   object btnNovoProduto: TButton
     Left = 30

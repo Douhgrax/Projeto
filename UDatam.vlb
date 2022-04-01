@@ -154,10 +154,6 @@ Coordinates=628,276,213,36
 [ADQEstoqueQTDEPEDIDOVENDA]
 Coordinates=628,331,217,36
 
-[DTSUsuario]
-Coordinates=447,1,84,58
-Visible=True
-
 [ADQClienteCNPJ]
 Coordinates=447,2674,116,36
 
@@ -512,9 +508,6 @@ Coordinates=836,2729,143,36
 [ADQEstoquePERCGNNCOMB]
 Coordinates=898,881,191,36
 
-[ADQusuario]
-Coordinates=420,10,219,1796
-
 [ADQClienteCODTABELAPRECO]
 Coordinates=898,936,205,36
 
@@ -798,5 +791,6 @@ Coordinates=1240,1,136,36
 Coordinates=898,5534,211,36
 
 []
-Coordinates=447,5699,91,36
+Coordinates=447,1,84,58
+Visible=True
 

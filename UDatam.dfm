@@ -1357,21 +1357,445 @@ object DataM: TDataM
   end
   object DTSGerenciar: TDataSource
     DataSet = ADQGerenciar
-    OnDataChange = DTSGerenciarDataChange
     Left = 144
     Top = 272
   end
-  object ADQusuario: TFDQuery
-    Active = True
-    MasterSource = DTSUsuario
+  object ADQItemVenda: TFDQuery
     Connection = FDConnection1
     SQL.Strings = (
-      'select * from tcompra')
+      'select * from titemvendanfce')
     Left = 80
     Top = 328
+    object ADQItemVendaCONTROLE: TIntegerField
+      FieldName = 'CONTROLE'
+      Origin = 'CONTROLE'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+      Required = True
+    end
+    object ADQItemVendaDATAEHORACADASTRO: TSQLTimeStampField
+      FieldName = 'DATAEHORACADASTRO'
+      Origin = 'DATAEHORACADASTRO'
+    end
+    object ADQItemVendaNUMEROITEM: TIntegerField
+      FieldName = 'NUMEROITEM'
+      Origin = 'NUMEROITEM'
+    end
+    object ADQItemVendaCODNFCE: TIntegerField
+      FieldName = 'CODNFCE'
+      Origin = 'CODNFCE'
+      Required = True
+    end
+    object ADQItemVendaCODPRODUTO: TIntegerField
+      FieldName = 'CODPRODUTO'
+      Origin = 'CODPRODUTO'
+      Required = True
+    end
+    object ADQItemVendaPRODUTO: TStringField
+      FieldName = 'PRODUTO'
+      Origin = 'PRODUTO'
+      Size = 120
+    end
+    object ADQItemVendaQTDE: TBCDField
+      FieldName = 'QTDE'
+      Origin = 'QTDE'
+      Precision = 18
+    end
+    object ADQItemVendaVALORUNITARIO: TBCDField
+      FieldName = 'VALORUNITARIO'
+      Origin = 'VALORUNITARIO'
+      Precision = 18
+    end
+    object ADQItemVendaVALORTOTAL: TFMTBCDField
+      FieldName = 'VALORTOTAL'
+      Origin = 'VALORTOTAL'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORLIQUIDO: TFMTBCDField
+      FieldName = 'VALORLIQUIDO'
+      Origin = 'VALORLIQUIDO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCFOP: TStringField
+      FieldName = 'CFOP'
+      Origin = 'CFOP'
+      Size = 4
+    end
+    object ADQItemVendaNCM: TStringField
+      FieldName = 'NCM'
+      Origin = 'NCM'
+      Size = 8
+    end
+    object ADQItemVendaUN: TStringField
+      FieldName = 'UN'
+      Origin = 'UN'
+      Size = 6
+    end
+    object ADQItemVendaCODIGOBARRA: TStringField
+      FieldName = 'CODIGOBARRA'
+      Origin = 'CODIGOBARRA'
+      Size = 14
+    end
+    object ADQItemVendaVALOROUTROS: TFMTBCDField
+      FieldName = 'VALOROUTROS'
+      Origin = 'VALOROUTROS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALOROUTROSITEM: TFMTBCDField
+      FieldName = 'VALOROUTROSITEM'
+      Origin = 'VALOROUTROSITEM'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORACRESCIMO: TFMTBCDField
+      FieldName = 'VALORACRESCIMO'
+      Origin = 'VALORACRESCIMO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORSEGURO: TFMTBCDField
+      FieldName = 'VALORSEGURO'
+      Origin = 'VALORSEGURO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCICMS: TFMTBCDField
+      FieldName = 'VALORBCICMS'
+      Origin = 'VALORBCICMS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORICMS: TFMTBCDField
+      FieldName = 'VALORICMS'
+      Origin = 'VALORICMS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCICMS: TFMTBCDField
+      FieldName = 'PERCICMS'
+      Origin = 'PERCICMS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCICMSST: TFMTBCDField
+      FieldName = 'VALORBCICMSST'
+      Origin = 'VALORBCICMSST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORICMSST: TFMTBCDField
+      FieldName = 'VALORICMSST'
+      Origin = 'VALORICMSST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCISSQN: TFMTBCDField
+      FieldName = 'VALORBCISSQN'
+      Origin = 'VALORBCISSQN'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORALIQUOTAISSQN: TFMTBCDField
+      FieldName = 'VALORALIQUOTAISSQN'
+      Origin = 'VALORALIQUOTAISSQN'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORISSQN: TFMTBCDField
+      FieldName = 'VALORISSQN'
+      Origin = 'VALORISSQN'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORDESCONTO: TFMTBCDField
+      FieldName = 'VALORDESCONTO'
+      Origin = 'VALORDESCONTO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORDESCONTOITEM: TFMTBCDField
+      FieldName = 'VALORDESCONTOITEM'
+      Origin = 'VALORDESCONTOITEM'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCDESCONTOITEM: TFMTBCDField
+      FieldName = 'PERCDESCONTOITEM'
+      Origin = 'PERCDESCONTOITEM'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCCOMISSAO: TBCDField
+      FieldName = 'PERCCOMISSAO'
+      Origin = 'PERCCOMISSAO'
+      Precision = 18
+    end
+    object ADQItemVendaTOTALCOMISSAO: TFMTBCDField
+      FieldName = 'TOTALCOMISSAO'
+      Origin = 'TOTALCOMISSAO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORIMPOSTOMEDIO: TFMTBCDField
+      FieldName = 'VALORIMPOSTOMEDIO'
+      Origin = 'VALORIMPOSTOMEDIO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaUSAGRADE: TStringField
+      FieldName = 'USAGRADE'
+      Origin = 'USAGRADE'
+      Size = 3
+    end
+    object ADQItemVendaUSASERIAL: TStringField
+      FieldName = 'USASERIAL'
+      Origin = 'USASERIAL'
+      Size = 3
+    end
+    object ADQItemVendaOBSITEM: TStringField
+      FieldName = 'OBSITEM'
+      Origin = 'OBSITEM'
+      Size = 500
+    end
+    object ADQItemVendaMOVIMENTAESTOQUE: TStringField
+      FieldName = 'MOVIMENTAESTOQUE'
+      Origin = 'MOVIMENTAESTOQUE'
+      Size = 3
+    end
+    object ADQItemVendaCANCELADO: TStringField
+      FieldName = 'CANCELADO'
+      Origin = 'CANCELADO'
+      Size = 3
+    end
+    object ADQItemVendaTIPOOPERACAO: TIntegerField
+      FieldName = 'TIPOOPERACAO'
+      Origin = 'TIPOOPERACAO'
+    end
+    object ADQItemVendaCODAPLICACAOPRODUTO: TStringField
+      FieldName = 'CODAPLICACAOPRODUTO'
+      Origin = 'CODAPLICACAOPRODUTO'
+      Size = 2
+    end
+    object ADQItemVendaCSOSN: TIntegerField
+      FieldName = 'CSOSN'
+      Origin = 'CSOSN'
+    end
+    object ADQItemVendaAMBIENTE: TIntegerField
+      FieldName = 'AMBIENTE'
+      Origin = 'AMBIENTE'
+    end
+    object ADQItemVendaENVIADA: TStringField
+      FieldName = 'ENVIADA'
+      Origin = 'ENVIADA'
+      Size = 3
+    end
+    object ADQItemVendaPRECOCUSTOITEM: TFMTBCDField
+      FieldName = 'PRECOCUSTOITEM'
+      Origin = 'PRECOCUSTOITEM'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaINUTILIZADO: TStringField
+      FieldName = 'INUTILIZADO'
+      Origin = 'INUTILIZADO'
+      Size = 3
+    end
+    object ADQItemVendaCODIGOANP: TStringField
+      FieldName = 'CODIGOANP'
+      Origin = 'CODIGOANP'
+      Size = 10
+    end
+    object ADQItemVendaCEST: TStringField
+      FieldName = 'CEST'
+      Origin = 'CEST'
+      Size = 10
+    end
+    object ADQItemVendaCSTPIS: TStringField
+      FieldName = 'CSTPIS'
+      Origin = 'CSTPIS'
+      Size = 2
+    end
+    object ADQItemVendaPERCPIS: TFMTBCDField
+      FieldName = 'PERCPIS'
+      Origin = 'PERCPIS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORPIS: TFMTBCDField
+      FieldName = 'VALORPIS'
+      Origin = 'VALORPIS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCPISST: TFMTBCDField
+      FieldName = 'VALORBCPISST'
+      Origin = 'VALORBCPISST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCPISST: TFMTBCDField
+      FieldName = 'PERCPISST'
+      Origin = 'PERCPISST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORPISST: TFMTBCDField
+      FieldName = 'VALORPISST'
+      Origin = 'VALORPISST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCSTIPI: TStringField
+      FieldName = 'CSTIPI'
+      Origin = 'CSTIPI'
+      Size = 2
+    end
+    object ADQItemVendaVALORBCIPI: TFMTBCDField
+      FieldName = 'VALORBCIPI'
+      Origin = 'VALORBCIPI'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORIPI: TFMTBCDField
+      FieldName = 'VALORIPI'
+      Origin = 'VALORIPI'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCSTCOFINS: TStringField
+      FieldName = 'CSTCOFINS'
+      Origin = 'CSTCOFINS'
+      Size = 2
+    end
+    object ADQItemVendaPERCCOFINS: TFMTBCDField
+      FieldName = 'PERCCOFINS'
+      Origin = 'PERCCOFINS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORCOFINS: TFMTBCDField
+      FieldName = 'VALORCOFINS'
+      Origin = 'VALORCOFINS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCCOFINSST: TFMTBCDField
+      FieldName = 'VALORBCCOFINSST'
+      Origin = 'VALORBCCOFINSST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCCOFINSST: TFMTBCDField
+      FieldName = 'PERCCOFINSST'
+      Origin = 'PERCCOFINSST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORCOFINSST: TFMTBCDField
+      FieldName = 'VALORCOFINSST'
+      Origin = 'VALORCOFINSST'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCODIGOENQUADRAMENTOIPI: TStringField
+      FieldName = 'CODIGOENQUADRAMENTOIPI'
+      Origin = 'CODIGOENQUADRAMENTOIPI'
+      Size = 3
+    end
+    object ADQItemVendaVALORBCPIS: TFMTBCDField
+      FieldName = 'VALORBCPIS'
+      Origin = 'VALORBCPIS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCCOFINS: TFMTBCDField
+      FieldName = 'VALORBCCOFINS'
+      Origin = 'VALORBCCOFINS'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCIPI: TFMTBCDField
+      FieldName = 'PERCIPI'
+      Origin = 'PERCIPI'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCODIGOSERVICO: TStringField
+      FieldName = 'CODIGOSERVICO'
+      Origin = 'CODIGOSERVICO'
+      Size = 5
+    end
+    object ADQItemVendaMD5J2: TStringField
+      FieldName = 'MD5J2'
+      Origin = 'MD5J2'
+      Size = 32
+    end
+    object ADQItemVendaPERCREDUCAOBC: TBCDField
+      FieldName = 'PERCREDUCAOBC'
+      Origin = 'PERCREDUCAOBC'
+      Precision = 18
+    end
+    object ADQItemVendaVALORBCICMSEFET: TFMTBCDField
+      FieldName = 'VALORBCICMSEFET'
+      Origin = 'VALORBCICMSEFET'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaPERCREDUCAOICMSEFET: TBCDField
+      FieldName = 'PERCREDUCAOICMSEFET'
+      Origin = 'PERCREDUCAOICMSEFET'
+      Precision = 18
+    end
+    object ADQItemVendaALIQUOTAICMSEFET: TBCDField
+      FieldName = 'ALIQUOTAICMSEFET'
+      Origin = 'ALIQUOTAICMSEFET'
+      Precision = 18
+    end
+    object ADQItemVendaVALORICMSEFET: TFMTBCDField
+      FieldName = 'VALORICMSEFET'
+      Origin = 'VALORICMSEFET'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaCODBENEFICIOFISCAL: TStringField
+      FieldName = 'CODBENEFICIOFISCAL'
+      Origin = 'CODBENEFICIOFISCAL'
+      Size = 10
+    end
+    object ADQItemVendaALIQUOTAICMSSTRET: TFMTBCDField
+      FieldName = 'ALIQUOTAICMSSTRET'
+      Origin = 'ALIQUOTAICMSSTRET'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORBCICMSSTRETIDO: TFMTBCDField
+      FieldName = 'VALORBCICMSSTRETIDO'
+      Origin = 'VALORBCICMSSTRETIDO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORICMSSTRETIDO: TFMTBCDField
+      FieldName = 'VALORICMSSTRETIDO'
+      Origin = 'VALORICMSSTRETIDO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaVALORICMSSUBSTITUTO: TFMTBCDField
+      FieldName = 'VALORICMSSUBSTITUTO'
+      Origin = 'VALORICMSSUBSTITUTO'
+      Precision = 18
+      Size = 2
+    end
+    object ADQItemVendaMESCLAR: TStringField
+      FieldName = 'MESCLAR'
+      Origin = 'MESCLAR'
+      Size = 3
+    end
   end
-  object DTSUsuario: TDataSource
-    DataSet = ADQGerenciar
+  object DTSItemVenda: TDataSource
+    DataSet = ADQItemVenda
     Left = 144
     Top = 328
   end

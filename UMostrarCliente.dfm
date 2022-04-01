@@ -1,7 +1,7 @@
-﻿object fAlterarCliente: TfAlterarCliente
+﻿object fMostrarCliente: TfMostrarCliente
   Left = 5
   Top = 5
-  Caption = 'Alterar Cliente'
+  Caption = 'Mostrar Cliente'
   ClientHeight = 627
   ClientWidth = 712
   Color = clBtnFace
@@ -65,21 +65,12 @@
     Height = 13
     Caption = 'RG'
   end
-  object Label14: TLabel
-    Left = 176
-    Top = 370
-    Width = 39
+  object Label3: TLabel
+    Left = 141
+    Top = 293
+    Width = 96
     Height = 13
-    HelpType = htKeyword
-    Caption = 'Contato'
-    StyleName = 'sss'
-  end
-  object Label7: TLabel
-    Left = 466
-    Top = 143
-    Width = 13
-    Height = 13
-    Caption = 'UF'
+    Caption = 'Data de Nascimento'
   end
   object Label13: TLabel
     Left = 524
@@ -89,6 +80,13 @@
     HelpType = htKeyword
     Caption = 'Endere'#231'o'
     StyleName = 'sss'
+  end
+  object Label7: TLabel
+    Left = 466
+    Top = 143
+    Width = 13
+    Height = 13
+    Caption = 'UF'
   end
   object Label8: TLabel
     Left = 576
@@ -112,7 +110,7 @@
     Caption = 'Pa'#237's'
   end
   object Label11: TLabel
-    Left = 464
+    Left = 466
     Top = 247
     Width = 45
     Height = 13
@@ -125,6 +123,24 @@
     Height = 13
     Caption = 'Bairro'
   end
+  object Label14: TLabel
+    Left = 176
+    Top = 370
+    Width = 39
+    Height = 13
+    HelpType = htKeyword
+    Caption = 'Contato'
+    StyleName = 'sss'
+  end
+  object Label15: TLabel
+    Left = 488
+    Top = 370
+    Width = 41
+    Height = 13
+    HelpType = htKeyword
+    Caption = 'Empresa'
+    StyleName = 'sss'
+  end
   object Label16: TLabel
     Left = 32
     Top = 405
@@ -132,15 +148,6 @@
     Height = 13
     HelpType = htKeyword
     Caption = 'N'#250'mero'
-    StyleName = 'sss'
-  end
-  object Label17: TLabel
-    Left = 176
-    Top = 477
-    Width = 28
-    Height = 13
-    HelpType = htKeyword
-    Caption = 'E-mail'
     StyleName = 'sss'
   end
   object Label18: TLabel
@@ -152,13 +159,13 @@
     Caption = 'Telefone'
     StyleName = 'sss'
   end
-  object Label15: TLabel
-    Left = 488
-    Top = 370
-    Width = 41
+  object Label17: TLabel
+    Left = 176
+    Top = 477
+    Width = 28
     Height = 13
     HelpType = htKeyword
-    Caption = 'Empresa'
+    Caption = 'E-mail'
     StyleName = 'sss'
   end
   object Label20: TLabel
@@ -179,13 +186,6 @@
     Caption = 'Profiss'#227'o'
     StyleName = 'sss'
   end
-  object Label3: TLabel
-    Left = 141
-    Top = 293
-    Width = 96
-    Height = 13
-    Caption = 'Data de Nascimento'
-  end
   object pClienteCadastro: TPanel
     Left = 176
     Top = 16
@@ -200,43 +200,43 @@
     ParentFont = False
     TabOrder = 0
   end
-  object btnCancelarCliente: TButton
-    Left = 32
-    Top = 561
-    Width = 105
-    Height = 49
-    Caption = 'Cancelar'
-    TabOrder = 1
-    OnClick = btnCancelarClienteClick
-  end
-  object btnGravarCliente: TButton
-    Left = 576
-    Top = 561
-    Width = 105
-    Height = 49
-    Caption = 'Gravar'
-    TabOrder = 2
-    OnClick = btnGravarClienteClick
-  end
-  object dbRazaoSocial: TDBEdit
+  object dbeRazaoSocial: TDBEdit
     Left = 24
     Top = 162
     Width = 153
     Height = 21
     DataField = 'CLIENTE'
     DataSource = DataM.DTSCliente
-    TabOrder = 3
+    TabOrder = 1
   end
-  object dbCnpj: TDBEdit
+  object dbeNomeFantasia: TDBEdit
+    Left = 216
+    Top = 162
+    Width = 153
+    Height = 21
+    DataField = 'FANTASIA'
+    DataSource = DataM.DTSCliente
+    TabOrder = 2
+  end
+  object dbeCnpj: TDBEdit
     Left = 24
     Top = 208
     Width = 153
     Height = 21
     DataField = 'CNPJ'
     DataSource = DataM.DTSCliente
+    TabOrder = 3
+  end
+  object dbeCPF: TDBEdit
+    Left = 216
+    Top = 208
+    Width = 153
+    Height = 21
+    DataField = 'CPF'
+    DataSource = DataM.DTSCliente
     TabOrder = 4
   end
-  object dbInscriçaoEstadual: TDBEdit
+  object dbeInscriçaoEstadual: TDBEdit
     Left = 24
     Top = 256
     Width = 153
@@ -245,139 +245,139 @@
     DataSource = DataM.DTSCliente
     TabOrder = 5
   end
-  object dbNomeFantasia: TDBEdit
-    Left = 216
-    Top = 162
-    Width = 153
-    Height = 21
-    DataField = 'FANTASIA'
-    DataSource = DataM.DTSCliente
-    TabOrder = 6
-  end
-  object dbCPF: TDBEdit
-    Left = 216
-    Top = 208
-    Width = 153
-    Height = 21
-    DataField = 'CPF'
-    DataSource = DataM.DTSCliente
-    TabOrder = 7
-  end
-  object dbRG: TDBEdit
+  object dbeRG: TDBEdit
     Left = 216
     Top = 256
     Width = 153
     Height = 21
     DataField = 'RG'
     DataSource = DataM.DTSCliente
-    TabOrder = 8
+    TabOrder = 6
   end
-  object dbDataNascimento: TDBEdit
+  object dbeDataNascimento: TDBEdit
     Left = 113
     Top = 312
     Width = 153
     Height = 21
     DataField = 'DATANASCIMENTO'
     DataSource = DataM.DTSCliente
-    TabOrder = 9
+    TabOrder = 7
   end
-  object dbNumero: TDBEdit
-    Left = 24
-    Top = 424
-    Width = 153
-    Height = 21
-    DataField = 'CELULAR'
-    DataSource = DataM.DTSCliente
-    TabOrder = 10
-  end
-  object dbTelefone: TDBEdit
-    Left = 216
-    Top = 424
-    Width = 153
-    Height = 21
-    DataField = 'TELEFONE'
-    DataSource = DataM.DTSCliente
-    TabOrder = 11
-  end
-  object dbEmail: TDBEdit
-    Left = 120
-    Top = 496
-    Width = 153
-    Height = 21
-    DataField = 'EMAIL'
-    DataSource = DataM.DTSCliente
-    TabOrder = 12
-  end
-  object dbprofissao: TDBEdit
-    Left = 452
-    Top = 496
-    Width = 153
-    Height = 21
-    DataField = 'PROFISSAO'
-    DataSource = DataM.DTSCliente
-    TabOrder = 13
-  end
-  object dbEmpresa: TDBEdit
-    Left = 452
-    Top = 424
-    Width = 153
-    Height = 21
-    DataField = 'EMPRESAQUETRABALHA'
-    DataSource = DataM.DTSCliente
-    TabOrder = 14
-  end
-  object dbBairro: TDBEdit
-    Left = 452
-    Top = 312
-    Width = 153
-    Height = 21
-    DataField = 'BAIRRO'
-    DataSource = DataM.DTSCliente
-    TabOrder = 15
-  end
-  object dbEndereco: TDBEdit
-    Left = 452
-    Top = 266
-    Width = 252
-    Height = 21
-    DataField = 'ENDERECO'
-    DataSource = DataM.DTSCliente
-    TabOrder = 16
-  end
-  object dbPais: TDBEdit
-    Left = 592
-    Top = 208
-    Width = 112
-    Height = 21
-    DataField = 'PAIS'
-    DataSource = DataM.DTSCliente
-    TabOrder = 17
-  end
-  object dbCep: TDBEdit
-    Left = 452
-    Top = 210
-    Width = 85
-    Height = 21
-    DataField = 'CEP'
-    DataSource = DataM.DTSCliente
-    TabOrder = 18
-  end
-  object dbCidade: TDBEdit
-    Left = 551
-    Top = 162
-    Width = 153
-    Height = 21
-    DataField = 'CIDADE'
-    DataSource = DataM.DTSCliente
-    TabOrder = 19
-  end
-  object dbUf: TDBEdit
+  object dbeUf: TDBEdit
     Left = 452
     Top = 162
     Width = 40
     Height = 21
     DataField = 'UF'
     DataSource = DataM.DTSCliente
+    TabOrder = 8
+  end
+  object dbeCidade: TDBEdit
+    Left = 551
+    Top = 162
+    Width = 153
+    Height = 21
+    DataField = 'CIDADE'
+    DataSource = DataM.DTSCliente
+    TabOrder = 9
+  end
+  object dbeCep: TDBEdit
+    Left = 452
+    Top = 208
+    Width = 85
+    Height = 21
+    DataField = 'CEP'
+    DataSource = DataM.DTSCliente
+    TabOrder = 10
+  end
+  object dbePais: TDBEdit
+    Left = 592
+    Top = 208
+    Width = 112
+    Height = 21
+    DataField = 'PAIS'
+    DataSource = DataM.DTSCliente
+    TabOrder = 11
+  end
+  object dbeEndereco: TDBEdit
+    Left = 452
+    Top = 266
+    Width = 252
+    Height = 21
+    DataField = 'ENDERECO'
+    DataSource = DataM.DTSCliente
+    TabOrder = 12
+  end
+  object dbeBairro: TDBEdit
+    Left = 452
+    Top = 312
+    Width = 153
+    Height = 21
+    DataField = 'BAIRRO'
+    DataSource = DataM.DTSCliente
+    TabOrder = 13
+  end
+  object dbeNumero: TDBEdit
+    Left = 24
+    Top = 424
+    Width = 153
+    Height = 21
+    DataField = 'CELULAR'
+    DataSource = DataM.DTSCliente
+    TabOrder = 14
+  end
+  object dbeTelefone: TDBEdit
+    Left = 216
+    Top = 424
+    Width = 153
+    Height = 21
+    DataField = 'TELEFONE'
+    DataSource = DataM.DTSCliente
+    TabOrder = 15
+  end
+  object dbeEmail: TDBEdit
+    Left = 120
+    Top = 496
+    Width = 153
+    Height = 21
+    DataField = 'EMAIL'
+    DataSource = DataM.DTSCliente
+    TabOrder = 16
+  end
+  object dbeEmpresa: TDBEdit
+    Left = 452
+    Top = 424
+    Width = 153
+    Height = 21
+    DataField = 'EMPRESAQUETRABALHA'
+    DataSource = DataM.DTSCliente
+    TabOrder = 17
+  end
+  object dbeprofissao: TDBEdit
+    Left = 452
+    Top = 496
+    Width = 153
+    Height = 21
+    DataField = 'PROFISSAO'
+    DataSource = DataM.DTSCliente
+    TabOrder = 18
+  end
+  object btnAlterarClienteMostrar: TButton
+    Left = 576
+    Top = 561
+    Width = 105
+    Height = 49
+    Caption = 'Alterar'
+    TabOrder = 19
+    OnClick = btnAlterarClienteMostrarClick
+  end
+  object btnCancelarCliente: TButton
+    Left = 32
+    Top = 561
+    Width = 105
+    Height = 49
+    Caption = 'Cancelar'
     TabOrder = 20
+    OnClick = btnCancelarClienteClick
   end
 end

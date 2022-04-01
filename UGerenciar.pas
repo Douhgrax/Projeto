@@ -10,10 +10,8 @@ uses
 type
   TfGerenciar = class(TForm)
     dgGridGerenciar: TDBGrid;
-    edBuscaVenda: TEdit;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
     btnBuscarVenda: TButton;
+    edBuscaGerenciar: TEdit;
   private
     { Private declarations }
   public

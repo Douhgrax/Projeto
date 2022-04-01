@@ -1,8 +1,8 @@
 object fVenda: TfVenda
   Left = 1
-  Top = 118
+  Top = 170
   Caption = 'Venda'
-  ClientHeight = 640
+  ClientHeight = 646
   ClientWidth = 1096
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -57,5 +57,6 @@ object fVenda: TfVenda
     Height = 88
     Caption = 'Finalizar'
     TabOrder = 4
+    OnClick = btnFinalizarVendaClick
   end
 end

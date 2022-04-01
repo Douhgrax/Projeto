@@ -45,7 +45,8 @@ var
 implementation
 {$R *.dfm}
 
-uses UDatam;
+uses UDatam, UAlterarCliente, UAlterarProduto, UCadastroCliente, UCliente,
+  UEstoque, UMenu, UMostrarCliente, UMostrarProduto, Unit2, UVenda;
 procedure TfCadastroProduto.btnCancelarEstoqueClick(Sender: TObject);
 begin
   Close;

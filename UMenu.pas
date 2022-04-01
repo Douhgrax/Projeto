@@ -25,6 +25,9 @@ type
     procedure Label3Click(Sender: TObject);
     procedure Sair1Click(Sender: TObject);
     procedure Cliente1Click(Sender: TObject);
+    procedure Estoque1Click(Sender: TObject);
+    procedure Venda1Click(Sender: TObject);
+    procedure Gerenciar1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -63,6 +66,18 @@ begin
   fCliente.ShowModal;
 end;
 
+procedure TfMenu.Estoque1Click(Sender: TObject);
+begin
+  fEstoque := TfEstoque.Create(Application);
+  fEstoque.ShowModal;
+end;
+
+procedure TfMenu.Gerenciar1Click(Sender: TObject);
+begin
+  fGerenciar := TfGerenciar.Create(Application);
+  fGerenciar.ShowModal;
+end;
+
 procedure TfMenu.Label3Click(Sender: TObject);
 begin
 Close;
@@ -74,6 +89,12 @@ if Application.MessageBox('Deseja realmente fechar?','Alerta Sistema', MB_YESNO)
 begin
   fmenu.close;
 end;
+end;
+
+procedure TfMenu.Venda1Click(Sender: TObject);
+begin
+  fVenda := TfVenda.Create(Application);
+  fVenda.ShowModal;
 end;
 
 end.

@@ -1,6 +1,6 @@
 object fGerenciar: TfGerenciar
   Left = 1
-  Top = 118
+  Top = 170
   Caption = 'Gerenciar'
   ClientHeight = 640
   ClientWidth = 1096
@@ -26,36 +26,19 @@ object fGerenciar: TfGerenciar
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
   end
-  object edBuscaVenda: TEdit
-    Left = 24
-    Top = 560
-    Width = 121
-    Height = 21
-    TabOrder = 1
-    Text = 'edBuscaVenda'
-  end
-  object RadioButton1: TRadioButton
-    Left = 24
-    Top = 587
-    Width = 113
-    Height = 17
-    Caption = 'RadioButton1'
-    TabOrder = 2
-  end
-  object RadioButton2: TRadioButton
-    Left = 24
-    Top = 610
-    Width = 113
-    Height = 17
-    Caption = 'RadioButton2'
-    TabOrder = 3
-  end
   object btnBuscarVenda: TButton
-    Left = 176
-    Top = 583
+    Left = 160
+    Top = 479
     Width = 105
     Height = 49
     Caption = 'Buscar Venda'
-    TabOrder = 4
+    TabOrder = 1
+  end
+  object edBuscaGerenciar: TEdit
+    Left = 8
+    Top = 479
+    Width = 121
+    Height = 21
+    TabOrder = 2
   end
 end

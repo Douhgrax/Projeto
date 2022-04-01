@@ -1,7 +1,5 @@
 unit UDatam;
-
 interface
-
 uses
   System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
   FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Phys.Intf, FireDAC.Stan.Def,
@@ -9,7 +7,6 @@ uses
   FireDAC.Phys.FBDef, FireDAC.VCLUI.Wait, FireDAC.Comp.UI, FireDAC.Phys.IBBase,
   Data.DB, FireDAC.Comp.Client, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet;
-
 type
   TDataM = class(TDataModule)
     FDConnection1: TFDConnection;
@@ -21,8 +18,6 @@ type
     DTSCliente: TDataSource;
     ADQGerenciar: TFDQuery;
     DTSGerenciar: TDataSource;
-    ADQusuario: TFDQuery;
-    DTSUsuario: TDataSource;
     ADQEstoqueCONTROLE: TIntegerField;
     ADQEstoquePRODUTO: TStringField;
     ADQEstoqueTIPOBARRA: TStringField;
@@ -278,29 +273,97 @@ type
     ADQClientePERCFCP: TFMTBCDField;
     ADQClientePERCREDUCAOBC: TFMTBCDField;
     ADQClienteCSTCSOSNAPLICAR: TStringField;
-    procedure DTSGerenciarDataChange(Sender: TObject; Field: TField);
-
+    ADQItemVenda: TFDQuery;
+    DTSItemVenda: TDataSource;
+    ADQItemVendaCONTROLE: TIntegerField;
+    ADQItemVendaDATAEHORACADASTRO: TSQLTimeStampField;
+    ADQItemVendaNUMEROITEM: TIntegerField;
+    ADQItemVendaCODNFCE: TIntegerField;
+    ADQItemVendaCODPRODUTO: TIntegerField;
+    ADQItemVendaPRODUTO: TStringField;
+    ADQItemVendaQTDE: TBCDField;
+    ADQItemVendaVALORUNITARIO: TBCDField;
+    ADQItemVendaVALORTOTAL: TFMTBCDField;
+    ADQItemVendaVALORLIQUIDO: TFMTBCDField;
+    ADQItemVendaCFOP: TStringField;
+    ADQItemVendaNCM: TStringField;
+    ADQItemVendaUN: TStringField;
+    ADQItemVendaCODIGOBARRA: TStringField;
+    ADQItemVendaVALOROUTROS: TFMTBCDField;
+    ADQItemVendaVALOROUTROSITEM: TFMTBCDField;
+    ADQItemVendaVALORACRESCIMO: TFMTBCDField;
+    ADQItemVendaVALORSEGURO: TFMTBCDField;
+    ADQItemVendaVALORBCICMS: TFMTBCDField;
+    ADQItemVendaVALORICMS: TFMTBCDField;
+    ADQItemVendaPERCICMS: TFMTBCDField;
+    ADQItemVendaVALORBCICMSST: TFMTBCDField;
+    ADQItemVendaVALORICMSST: TFMTBCDField;
+    ADQItemVendaVALORBCISSQN: TFMTBCDField;
+    ADQItemVendaVALORALIQUOTAISSQN: TFMTBCDField;
+    ADQItemVendaVALORISSQN: TFMTBCDField;
+    ADQItemVendaVALORDESCONTO: TFMTBCDField;
+    ADQItemVendaVALORDESCONTOITEM: TFMTBCDField;
+    ADQItemVendaPERCDESCONTOITEM: TFMTBCDField;
+    ADQItemVendaPERCCOMISSAO: TBCDField;
+    ADQItemVendaTOTALCOMISSAO: TFMTBCDField;
+    ADQItemVendaVALORIMPOSTOMEDIO: TFMTBCDField;
+    ADQItemVendaUSAGRADE: TStringField;
+    ADQItemVendaUSASERIAL: TStringField;
+    ADQItemVendaOBSITEM: TStringField;
+    ADQItemVendaMOVIMENTAESTOQUE: TStringField;
+    ADQItemVendaCANCELADO: TStringField;
+    ADQItemVendaTIPOOPERACAO: TIntegerField;
+    ADQItemVendaCODAPLICACAOPRODUTO: TStringField;
+    ADQItemVendaCSOSN: TIntegerField;
+    ADQItemVendaAMBIENTE: TIntegerField;
+    ADQItemVendaENVIADA: TStringField;
+    ADQItemVendaPRECOCUSTOITEM: TFMTBCDField;
+    ADQItemVendaINUTILIZADO: TStringField;
+    ADQItemVendaCODIGOANP: TStringField;
+    ADQItemVendaCEST: TStringField;
+    ADQItemVendaCSTPIS: TStringField;
+    ADQItemVendaPERCPIS: TFMTBCDField;
+    ADQItemVendaVALORPIS: TFMTBCDField;
+    ADQItemVendaVALORBCPISST: TFMTBCDField;
+    ADQItemVendaPERCPISST: TFMTBCDField;
+    ADQItemVendaVALORPISST: TFMTBCDField;
+    ADQItemVendaCSTIPI: TStringField;
+    ADQItemVendaVALORBCIPI: TFMTBCDField;
+    ADQItemVendaVALORIPI: TFMTBCDField;
+    ADQItemVendaCSTCOFINS: TStringField;
+    ADQItemVendaPERCCOFINS: TFMTBCDField;
+    ADQItemVendaVALORCOFINS: TFMTBCDField;
+    ADQItemVendaVALORBCCOFINSST: TFMTBCDField;
+    ADQItemVendaPERCCOFINSST: TFMTBCDField;
+    ADQItemVendaVALORCOFINSST: TFMTBCDField;
+    ADQItemVendaCODIGOENQUADRAMENTOIPI: TStringField;
+    ADQItemVendaVALORBCPIS: TFMTBCDField;
+    ADQItemVendaVALORBCCOFINS: TFMTBCDField;
+    ADQItemVendaPERCIPI: TFMTBCDField;
+    ADQItemVendaCODIGOSERVICO: TStringField;
+    ADQItemVendaMD5J2: TStringField;
+    ADQItemVendaPERCREDUCAOBC: TBCDField;
+    ADQItemVendaVALORBCICMSEFET: TFMTBCDField;
+    ADQItemVendaPERCREDUCAOICMSEFET: TBCDField;
+    ADQItemVendaALIQUOTAICMSEFET: TBCDField;
+    ADQItemVendaVALORICMSEFET: TFMTBCDField;
+    ADQItemVendaCODBENEFICIOFISCAL: TStringField;
+    ADQItemVendaALIQUOTAICMSSTRET: TFMTBCDField;
+    ADQItemVendaVALORBCICMSSTRETIDO: TFMTBCDField;
+    ADQItemVendaVALORICMSSTRETIDO: TFMTBCDField;
+    ADQItemVendaVALORICMSSUBSTITUTO: TFMTBCDField;
+    ADQItemVendaMESCLAR: TStringField;
   private
     { Private declarations }
   public
     { Public declarations }
   end;
-
 var
   DataM: TDataM;
-
 implementation
-
 {%CLASSGROUP 'Vcl.Controls.TControl'}
-
 uses Unit2, UCliente, UAlterarCliente, UAlterarProduto, UCadastroCliente,
   UCadastroProduto, UEstoque, UMenu, UVenda;
-
 {$R *.dfm}
+end.
 
-eprocedure TDataM.DTSGerenciarDataChange(Sender: TObject; Field: TField);
-begin
-
-end;
-
-nd.
